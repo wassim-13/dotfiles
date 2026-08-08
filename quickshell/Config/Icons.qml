@@ -25,6 +25,11 @@ Singleton {
     readonly property string brightnessMedium: String.fromCodePoint(0xf00de)
     readonly property string brightnessLow:    String.fromCodePoint(0xf00dc)
 
+    readonly property string bell:     String.fromCodePoint(0xf009a)
+    readonly property string bellRing: String.fromCodePoint(0xf009e)
+    readonly property string bellOff:  String.fromCodePoint(0xf009b)
+    readonly property string trash:    String.fromCodePoint(0xf01b4) 
+
     readonly property string chevronLeft:  String.fromCodePoint(0xf0141)
     readonly property string chevronRight: String.fromCodePoint(0xf0142)
     readonly property string refresh:      String.fromCodePoint(0xf0450)

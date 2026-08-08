@@ -72,6 +72,8 @@ PanelWindow {
             }
             WifiWidget {}
 
+            NotificationWidget {}
+
             PowerMenu {}
         }
     }

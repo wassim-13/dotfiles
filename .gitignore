@@ -5,8 +5,9 @@
 !hypr/
 !kitty/
 !quickshell/
-
+!swaync/
 !nvim/
+
 nvim/*
 
 !nvim/lua/
