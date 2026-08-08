@@ -1,0 +1,12 @@
+/*
+
+!.gitignore
+
+!hypr/
+!kitty/
+!quickshell/
+
+!nvim/
+nvim/*
+
+!nvim/lua/
