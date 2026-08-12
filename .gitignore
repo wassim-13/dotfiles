@@ -6,6 +6,7 @@
 !kitty/
 !quickshell/
 !swaync/
+!wofi/
 !nvim/
 
 nvim/*

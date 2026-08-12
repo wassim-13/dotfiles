@@ -1,0 +1,60 @@
+window {
+    margin: 0px;
+    border: 2px solid #7c96a8; /* Muted Icy Blue */
+    background-color: rgba(17, 26, 46, 0.95); /* Deep Forest Teal */
+    border-radius: 12px;
+    font-family: "JetBrainsMono Nerd Font", sans-serif;
+    font-size: 14px;
+}
+
+#input {
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    color: #d1d9e0; /* Light Sky Text */
+    background-color: rgba(124, 150, 168, 0.2); /* Translucent Icy Blue */
+    border-radius: 8px;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+#text {
+    margin: 5px;
+    padding: 5px;
+    border: none;
+    color: #d1d9e0;
+    /* Force long text to truncate cleanly */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#entry {
+    border: none;
+    border-radius: 8px;
+}
+
+/* The Sky Orange hover state */
+#entry:selected {
+    background-color: #d97930;
+}
+
+#text:selected {
+    color: #111a2e; /* Dark teal text for contrast */
+    font-weight: bold;
+}

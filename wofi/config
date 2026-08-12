@@ -1,0 +1,11 @@
+show=drun
+prompt=Launch Application...
+width=35%
+height=45%
+location=center
+filter_rate=15
+insensitive=true
+allow_images=true
+image_size=28
+hide_scroll=true
+term=ghostty
