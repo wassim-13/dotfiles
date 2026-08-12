@@ -1,11 +1,18 @@
+# Core settings
+mode=drun
 show=drun
-prompt=Launch Application...
-width=35%
-height=45%
+prompt=Search...
+width=500
+height=380
 location=center
-filter_rate=15
+
+# Search behavior
 insensitive=true
+matching=contains
+exec_search=false
+
+# Appearance
 allow_images=true
-image_size=28
+image_size=35
 hide_scroll=true
-term=ghostty
+dynamic_lines=true
