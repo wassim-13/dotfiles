@@ -2,7 +2,6 @@
 ---- MY PROGRAMS ----
 ---------------------
 
--- Set programs that you use
 local terminal = "kitty"
 local browser = "zen-browser"
 local fileManager = "nautilus"
@@ -22,6 +21,7 @@ hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(document_viewer))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(editor))
 
