@@ -6,7 +6,7 @@ local terminal = "kitty"
 local browser = "zen-browser"
 local fileManager = "nautilus"
 local menu = "wofi"
-local document_viewer = "evince"
+local document_viewer = "zathura"
 local editor = "kitty --app-id nvim-gui nvim"
 
 ---------------------

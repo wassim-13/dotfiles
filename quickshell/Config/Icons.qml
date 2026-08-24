@@ -36,6 +36,8 @@ Singleton {
     readonly property string check:        String.fromCodePoint(0xf012c)
     readonly property string close:        String.fromCodePoint(0xf0156)
     readonly property string battery:      String.fromCodePoint(0xf007a)
+    readonly property string batteryCharging: String.fromCodePoint(0xf0084)
+    readonly property string list:         String.fromCodePoint(0xf0335)
 
     readonly property string bluetooth:          String.fromCodePoint(0xf00af) 
     readonly property string bluetoothOff:       String.fromCodePoint(0xf00b2) 
@@ -49,12 +51,12 @@ Singleton {
     readonly property string watch:      String.fromCodePoint(0xf0b30) 
     readonly property string genericDevice: String.fromCodePoint(0xf0a9c)
 
-    readonly property string wifiOff:  String.fromCodePoint(0xf0928) 
+    readonly property string wifiOff:  String.fromCodePoint(0xf05aa) 
     readonly property var wifiBars: [
-        String.fromCodePoint(0xf091f), 
-        String.fromCodePoint(0xf0922), 
-        String.fromCodePoint(0xf0924), 
-        String.fromCodePoint(0xf0925) 
+        String.fromCodePoint(0xf091f), // strength 1
+        String.fromCodePoint(0xf0922), // strength 2
+        String.fromCodePoint(0xf0925), // strength 3
+        String.fromCodePoint(0xf0928)  // strength 4
     ]
 
     function wifi(strength: real): string {

@@ -55,14 +55,17 @@ PanelWindow {
             spacing: Theme.chipSpacing
 
             CpuWidget {}
-
             MemWidget {}
 
+            Rectangle {
+                anchors.verticalCenter: parent.verticalCenter
+                width: 1
+                height: 12
+                color: Theme.surface1
+            }
 
             BrightnessWidget {}
-            
             AudioWidget {}
-            
             
             Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
@@ -70,10 +73,19 @@ PanelWindow {
                 height: 12
                 color: Theme.surface1
             }
+
             WifiWidget {}
+            BluetoothWidget {}
+            BatteryWidget {}
+
+            Rectangle {
+                anchors.verticalCenter: parent.verticalCenter
+                width: 1
+                height: 12
+                color: Theme.surface1
+            }
 
             NotificationWidget {}
-
             PowerMenu {}
         }
     }

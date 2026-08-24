@@ -2,7 +2,8 @@ pragma Singleton
 
 import QtQuick
 import Quickshell
-import Quickshell.Bluetooth 
+import Quickshell.Bluetooth
+import "root:/Config" 
 
 Singleton {
     id: root

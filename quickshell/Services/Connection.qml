@@ -42,4 +42,23 @@ Singleton {
         }
         return null;
     }
+
+    readonly property var availableNetworks: {
+        if (!wifiDevice || !wifiDevice.networks) return [];
+        const out = [];
+        for (const n of wifiDevice.networks.values) {
+            out.push(n);
+        }
+        out.sort((a, b) => (b.signalStrength ?? 0) - (a.signalStrength ?? 0));
+        return out;
+    }
+
+    function toggleWifi() {
+        Quickshell.execDetached(["nmcli", "radio", "wifi", wifiEnabled ? "off" : "on"]);
+    }
+
+    function connectNetwork(network) {
+        if (!network || !network.name) return;
+        Quickshell.execDetached(["nmcli", "device", "wifi", "connect", network.name]);
+    }
 }

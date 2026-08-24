@@ -9,7 +9,7 @@ Chip {
 
     icon: BluetoothService.icon
     accent: BluetoothService.enabled ? Theme.blue : Theme.overlay0
-    label: BluetoothService.label
+    label: ""
     maxLabelWidth: 120
 
     interactive: true

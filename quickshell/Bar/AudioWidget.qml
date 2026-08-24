@@ -13,7 +13,7 @@ Chip {
         : Icons.volumeLow
 
     accent: Audio.muted ? Theme.red : Theme.blue
-    label: Audio.muted ? "Muted" : Math.round(Audio.volume) + "%"
+    label: Audio.muted ? "" : Math.round(Audio.volume) + "%"
 
     interactive: true
     
