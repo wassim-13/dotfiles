@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-path="/home/wassim/Videos/Records/$(date +'%d%m%y-%H%M%S').mp4"
-icon="/home/wassim/Videos/Records/rec.png"
+path="$HOME/Videos/Records/$(date +'%d%m%y-%H%M%S').mp4"
+icon="$HOME/Videos/Records/rec.png"
 
 a=$(pgrep "wl-screenrec" | wc -l)
 

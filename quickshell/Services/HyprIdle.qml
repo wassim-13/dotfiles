@@ -7,15 +7,25 @@ import Quickshell.Io
 Singleton {
     id: root
 
-    property bool running: false
+    property bool i_running: false
+    property bool s_running: false
 
     Process {
-        id: proc
+        id: idle
         command: ["pgrep", "-x", "hypridle"]
         onExited: (code, status) => {
-            root.running = (code === 0);
+            root.i_running = (code === 0);
         }
     }
+    
+    Process {
+        id: srec
+        command: ["pgrep", "screenrec"]
+        onExited: (code, status) => {
+            root.s_running = (code === 0);
+        }
+    }
+
 
     Timer {
         interval: 1000
@@ -23,8 +33,11 @@ Singleton {
         repeat: true
         triggeredOnStart: true
         onTriggered: {
-            if (!proc.running) {
-                proc.running = true;
+            if (!idle.running) {
+                idle.running = true;
+            }
+            if (!srec.running) {
+                srec.running = true;
             }
         }
     }
