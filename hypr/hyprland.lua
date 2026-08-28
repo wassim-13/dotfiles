@@ -27,6 +27,8 @@ hl.env("HYPRCURSOR_THEME", "Breeze_cursors")
 hl.env("XCURSOR_SIZE", "18")
 hl.env("HYPRCURSOR_SIZE", "18")
 
+HYPR_ROOT = debug.getinfo(1, "S").source:sub(2):match("(.*)/") or "."
+
 -----------------------
 ---- LOOK AND FEEL ----
 -----------------------

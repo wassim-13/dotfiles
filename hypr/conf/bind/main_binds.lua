@@ -15,10 +15,14 @@ local editor = "kitty --app-id nvim-gui nvim"
 
 local mainMod = "SUPER"
 
+local scripts = HYPR_ROOT .. "/scripts"
+
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(document_viewer))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+
+hl.bind(mainMod .. " + I", hl.dsp.exec_cmd(scripts .. "/toggleIdle.sh"))
 
 hl.bind(mainMod .. " + K", hl.dsp.exec_cmd("hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
@@ -28,8 +32,8 @@ hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(editor))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
-hl.bind(mainMod .. " + S", hl.dsp.exec_cmd("/home/wassim/temp/boring/screenshot.sh"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("/home/wassim/temp/boring/screenrec.sh"))
+hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(scripts .. "/screenshot.sh"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(scripts .. "/screenrec.sh"))
 
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + X", hl.dsp.window.kill())

@@ -23,25 +23,42 @@ PanelWindow {
         anchors.fill: parent
         color: Theme.base
 
-        Rectangle {
-            anchors {
-                left: parent.left
-                right: parent.right
-                bottom: parent.bottom
-            }
-            height: 1
-            color: Theme.surface0
-        }
 
-        Workspaces {
+        Row {
             anchors {
                 left: parent.left
-                leftMargin: Theme.barPadding + 4
+                leftMargin: 10
                 verticalCenter: parent.verticalCenter
             }
-            monitor: root.monitor
-        }
+            spacing: Theme.chipSpacing
+            
+            IdleWidget {
+                id: idle
+                anchors.verticalCenter: parent.verticalCenter
+            }
+            
+            Item {
+                id: bar
+                visible: idle.visible
+                anchors.verticalCenter: parent.verticalCenter
+                width: 1 + Theme.chipPadding * 2
+                height: 12
 
+                Rectangle {
+                    anchors.centerIn: parent
+                    width: 1
+                    height: parent.height
+                    color: Theme.surface1
+                }
+            }
+            
+            Workspaces {
+                id: workspaces
+                anchors.verticalCenter: parent.verticalCenter
+                monitor: root.monitor
+            }
+        }
+        
         ClockWidget {
             anchors.centerIn: parent
         }
