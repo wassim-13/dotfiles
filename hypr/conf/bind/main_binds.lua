@@ -17,6 +17,7 @@ local mainMod = "SUPER"
 
 local scripts = HYPR_ROOT .. "/scripts"
 
+hl.bind(mainMod .. " + A", hl.dsp.exec_cmd(scripts .. "/test.sh"))
 hl.bind(mainMod .. " + B", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + D", hl.dsp.exec_cmd(document_viewer))
@@ -34,6 +35,7 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + S", hl.dsp.exec_cmd(scripts .. "/screenshot.sh"))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd(scripts .. "/screenrec.sh"))
+hl.bind(mainMod .. " + ALT + S", hl.dsp.exec_cmd(scripts .. "/screenshot.sh" .. " w"))
 
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + X", hl.dsp.window.kill())

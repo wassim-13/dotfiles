@@ -3,6 +3,7 @@
 !.gitignore
 
 !hypr/
+hypr/scripts/test.sh
 !kitty/
 !quickshell/
 !swaync/
