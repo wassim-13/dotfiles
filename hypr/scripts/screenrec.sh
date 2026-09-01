@@ -11,5 +11,7 @@ if ((a > 0)); then
 fi
 
 if wl-screenrec -g "$(slurp)" --codec hevc --low-power=off -b "15 MB" -f "$path"; then
-    notify-send -i "$icon" "saved screen record at : $path"
+    ACTION=$(notify-send -i "$icon" "saved screen record at : $path" --action="default=Open")
+
+    [[ "$ACTION" = "default" ]] && xdg-open "$path"
 fi

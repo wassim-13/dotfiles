@@ -15,7 +15,7 @@ hl.bind(mainMod .. " + code:35", hl.dsp.workspace.toggle_special("magic"))
 hl.bind(mainMod .. " + SHIFT + code:35", hl.dsp.window.move({ workspace = "special:magic" }))
 
 hl.bind(mainMod .. " + mouse_down", hl.dsp.focus({ workspace = "e+1" }))
-hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind(mainMod .. " + mouse_up", hl.dsp.focus({ workspace = -1 }))
 
 hl.bind(mainMod .. " + mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind(mainMod .. " + mouse:273", hl.dsp.window.resize(), { mouse = true })
@@ -26,11 +26,11 @@ hl.bind("SUPER + Tab", function()
 end)
 
 hl.bind("SUPER + CTRL + right", hl.dsp.window.move({ workspace = "next" }))
-hl.bind("SUPER + CTRL + left", hl.dsp.window.move({ workspace = "e-1" }))
+hl.bind("SUPER + CTRL + left", hl.dsp.window.move({ workspace = -1 }))
 hl.bind("SUPER + CTRL + up", hl.dsp.window.move({ workspace = "prev" }))
 
 hl.bind("SUPER + ALT + right", hl.dsp.focus({ workspace = "next" }))
-hl.bind("SUPER + ALT + left", hl.dsp.focus({ workspace = "e-1" }))
+hl.bind("SUPER + ALT + left", hl.dsp.focus({ workspace = -1 }))
 hl.bind("SUPER + ALT + up", hl.dsp.focus({ workspace = "prev" }))
 
 hl.bind("SUPER + code:86", hl.dsp.window.resize({ x = 20, y = 0, relative = true }), { repeating = true })

@@ -26,6 +26,7 @@ hl.env("XCURSOR_THEME", "breeze_cursors")
 hl.env("HYPRCURSOR_THEME", "Breeze_cursors")
 hl.env("XCURSOR_SIZE", "18")
 hl.env("HYPRCURSOR_SIZE", "18")
+hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 HYPR_ROOT = debug.getinfo(1, "S").source:sub(2):match("(.*)/") or "."
 
