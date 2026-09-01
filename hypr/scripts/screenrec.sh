@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+DIR="$HOME/Videos/Records"
+[[ ! -d "$DIR" ]] && mkdir -p "$DIR"
+
 path="$HOME/Videos/Records/$(date +'%d%m%y-%H%M%S').mp4"
 icon="$HOME/Videos/Records/rec.png"
 

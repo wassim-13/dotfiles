@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+DIR="$HOME/Pictures/Screenshots"
+[[ ! -d "$DIR" ]] && mkdir -p "$DIR"
+
 path="$HOME/Pictures/Screenshots/$(date +'%d%m%y-%H%M%S').png"
 
 if grim -g "$(slurp)" "$path"; then
