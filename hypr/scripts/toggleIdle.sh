@@ -3,5 +3,5 @@
 if pgrep hypridle; then
     pkill hypridle
 else
-    hypridle &
+    hyprctl dispatch 'hl.dsp.exec_cmd("hypridle")'
 fi

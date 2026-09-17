@@ -25,10 +25,6 @@ hl.bind("SUPER + Tab", function()
 	hl.dispatch(hl.dsp.window.bring_to_top())
 end)
 
-hl.bind("SUPER + CTRL + right", hl.dsp.window.move({ workspace = "next" }))
-hl.bind("SUPER + CTRL + left", hl.dsp.window.move({ workspace = -1 }))
-hl.bind("SUPER + CTRL + up", hl.dsp.window.move({ workspace = "prev" }))
-
 hl.bind("SUPER + ALT + right", hl.dsp.focus({ workspace = "next" }))
 hl.bind("SUPER + ALT + left", hl.dsp.focus({ workspace = -1 }))
 hl.bind("SUPER + ALT + up", hl.dsp.focus({ workspace = "prev" }))
@@ -41,17 +37,31 @@ hl.bind("SUPER + SHIFT + code:86", hl.dsp.window.resize({ x = 0, y = 20, relativ
 local function smart_nav(direction, coord)
 	return function()
 		local w = hl.get_active_window()
+		if not w then
+			return
+		end
 
-		if w ~= nil then
-			if w.floating then
-				hl.dispatch(hl.dsp.window.move({ x = coord.x, y = coord.y, relative = true }))
-			else
-				hl.dispatch(hl.dsp.window.swap({ direction = direction }))
-			end
+		if w.floating then
+			hl.dispatch(hl.dsp.window.move({ x = coord.x, y = coord.y, relative = true }))
+			return
+		end
+
+		local initial_x = w.at[1]
+
+		hl.dispatch(hl.dsp.window.swap({ direction = direction }))
+
+		local updated_w = hl.get_active_window()
+		local new_x = updated_w and updated_w.at and updated_w.at[1]
+
+		if new_x == initial_x and (direction == "r" or direction == "l") then
+			local target_ws = direction == "r" and "next" or "-1"
+			local insert_side = direction == "r" and "l" or "r"
+
+			hl.dispatch(hl.dsp.window.move({ workspace = target_ws }))
+			hl.dispatch(hl.dsp.window.move({ direction = insert_side }))
 		end
 	end
 end
-
 hl.bind("SUPER + SHIFT + Left", smart_nav("l", { x = -20, y = 0 }), { repeating = true })
 hl.bind("SUPER + SHIFT + Right", smart_nav("r", { x = 20, y = 0 }), { repeating = true })
 hl.bind("SUPER + SHIFT + Up", smart_nav("u", { x = 0, y = -20 }), { repeating = true })
