@@ -46,19 +46,25 @@ local function smart_nav(direction, coord)
 			return
 		end
 
-		local initial_x = w.at[1]
+		local function get_width()
+			local monitor = hl.get_active_monitor()
+			if not monitor then
+				return 0
+			end
+			return monitor.width
+		end
 
-		hl.dispatch(hl.dsp.window.swap({ direction = direction }))
+		local rx = get_width() - w.at.x - w.size.x - 10
+		local lx = w.at.x - 10
 
-		local updated_w = hl.get_active_window()
-		local new_x = updated_w and updated_w.at and updated_w.at[1]
-
-		if new_x == initial_x and (direction == "r" or direction == "l") then
-			local target_ws = direction == "r" and "next" or "-1"
-			local insert_side = direction == "r" and "l" or "r"
-
-			hl.dispatch(hl.dsp.window.move({ workspace = target_ws }))
-			hl.dispatch(hl.dsp.window.move({ direction = insert_side }))
+		if direction == "r" and rx <= 0 then
+			hl.dispatch(hl.dsp.window.move({ workspace = "+1" }))
+			hl.dispatch(hl.dsp.window.move({ direction = "l" }))
+		elseif direction == "l" and lx <= 0 then
+			hl.dispatch(hl.dsp.window.move({ workspace = "-1" }))
+			hl.dispatch(hl.dsp.window.move({ direction = "r" }))
+		else
+			hl.dispatch(hl.dsp.window.swap({ direction = direction }))
 		end
 	end
 end
